@@ -36,14 +36,15 @@ public class mainController {
         model.addAttribute("fangfa","GET");
         return "test4";
     }
-    @RequestMapping(value = "test/href5",method = RequestMethod.POST)
+    @RequestMapping(value = "test/href4",method = RequestMethod.POST)
     public String test5(@RequestParam("t1")int begin,
                         @RequestParam("t2")int end,Model model){
         Random random = new Random();
         model.addAttribute("data",begin+random.nextInt(end-begin));
         model.addAttribute("begin",begin);
         model.addAttribute("end",end);
-        model.addAttribute("fangfa","post");
+        model.addAttribute("fangfa","POST");
         return "test4";
     }
+
 }

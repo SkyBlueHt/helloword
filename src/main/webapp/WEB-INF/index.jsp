@@ -26,7 +26,7 @@
     <input type="submit" value="提交">
 </form><br><br>
 
-
+<a href="/web/studentPost">测试页面五</a><br>
 </body>
 <script>
     function changeUrl(obj) {

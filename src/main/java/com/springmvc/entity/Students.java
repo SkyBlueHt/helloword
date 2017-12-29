@@ -70,4 +70,17 @@ public class Students {
     public void setScoresId(Integer scoresId) {
         this.scoresId = scoresId;
     }
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", sex=" + sex +
+                ", phoneno=" + phoneno +
+                ", address='" + address + '\'' +
+                ", scoresId=" + scoresId +
+                '}';
+    }
 }

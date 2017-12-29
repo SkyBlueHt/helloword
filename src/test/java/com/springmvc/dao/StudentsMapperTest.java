@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+
 import static java.lang.System.out;
 import static org.junit.Assert.*;
 
@@ -39,6 +41,20 @@ public class StudentsMapperTest {
         System.out.println(result);
         assert (result ==1);
 
+    }
+    @Test
+    public void getCount()throws Exception{
+        System.out.println(studentsMapper.getCount());
+    }
+
+    @Test
+    public void selectStudent()throws Exception{
+        Students students = new Students();
+        students.setId(38);
+        ArrayList<Students> list = studentsMapper.selectSelective(students);
+        for (Students s:list){
+            System.out.println(s);
+        }
     }
 
 }
