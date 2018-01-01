@@ -12,7 +12,7 @@ public class StudentService {
     @Autowired
     private StudentsMapper studentsMapper;
 
-    int insert(Students students){
+    public int insert(Students students){
         return  studentsMapper.insertSelective(students);
     }
 
@@ -39,7 +39,7 @@ public class StudentService {
         return studentsMapper.selectStudent(record);
     }*/
 
-     ArrayList<Students> selectSelective(Students record) {
+     public ArrayList<Students> selectSelective(Students record) {
         return studentsMapper.selectSelective(record);
     }
 

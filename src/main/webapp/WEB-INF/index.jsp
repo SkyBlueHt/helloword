@@ -27,6 +27,8 @@
 </form><br><br>
 
 <a href="/web/studentPost">测试页面五</a><br>
+
+<a href="/web/studentLogin">登陆</a><br>
 </body>
 <script>
     function changeUrl(obj) {

@@ -28,10 +28,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.springmvc.entity.Students" >
-    insert into students (id, name, pwd, 
+    insert into students ( name, pwd,
       sex, phoneNo, address, 
       scores_id)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+    values ( #{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},
       #{sex,jdbcType=INTEGER}, #{phoneno,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
       #{scoresId,jdbcType=INTEGER})
   </insert>
@@ -108,6 +108,8 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
   <update id="updateByPrimaryKey" parameterType="com.springmvc.entity.Students" >
     update students
     set name = #{name,jdbcType=VARCHAR},
@@ -118,20 +120,20 @@
       scores_id = #{scoresId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
+    <!--select id name pwd ...form students where id=? and name=?..-->
     <select id="selectSelective" resultMap="BaseResultMap" parameterType="com.springmvc.entity.Students" >
         select
         <include refid="Base_Column_List" />
         from students
         <where>
             <if test="id != null" >
-                id = #{id,jdbcType=INTEGER}
+          id = #{id,jdbcType=INTEGER}
             </if>
             <if test="name != null" >
                 AND name = #{name,jdbcType=VARCHAR}
             </if>
             <if test="pwd != null" >
-                AND pw = #{pw,jdbcType=VARCHAR}
+                AND pwd = #{pwd,jdbcType=VARCHAR}
             </if>
 
         </where>
